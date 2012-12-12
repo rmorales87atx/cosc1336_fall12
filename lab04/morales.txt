@@ -1,0 +1,20 @@
+50/50
+------------------------
+
+Yeah, don't you love looking at other people's code?  And trying to
+implement something like AI by hand using conditionals is pretty
+hairy...
+
+problem 1: Good.
+
+problem 2: Good.
+
+problem 3: I'm not really okay with the code limitations you've
+imposed. (-1) You should be able to handle the inputs in any order
+through either additional if statements or additional logical
+operators.  
+
+Okay, your enhanced version is quite nice, so I'll give you your point
+back. (+1)
+
+problem 4: Good.

@@ -1,0 +1,28 @@
+50/50
+------------------------
+
+Your enhanced versions are great (though they use stuff like
+value-returning functions, which we haven't covered yet, so I'm glad
+you included the original versions, too).  But the thing I really like
+is your thorough tallying of user inputs that cause the program to
+behave badly.  That's great!
+
+problem 1: Good.
+
+problem 2: Good.
+
+problem 3: The pseudocode in your IPO chart can look more code-like.
+It seems like you made things maybe a little *less* clear by trying to
+avoid writing code-list statements.  But it would be fine to write
+something like:
+
+If the magic value is equal to the year
+   set the message to "This date is magic!"
+Otherwise
+   set the message to "This date is not magic."
+Print the message
+
+Using indenting as in Python to indicate the scope of each line is
+generally understood.
+
+problem 4: Good.

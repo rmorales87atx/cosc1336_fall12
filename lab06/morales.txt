@@ -1,0 +1,22 @@
+50/50
+------------------------
+
+In general, avoid putting spaces in your file names (and directory
+names if you are creating a multi-file project)
+
+problem 1: Your program works great, but your input validation loop in
+get_primary_color is a little more complicated than necessary, I
+believe.  I'd write it like this:
+
+def get_primary_color():
+    result = input("Enter a primary color: ")
+    while not is_valid_primary(result):
+        print("Invalid entry...")
+        result = input("Enter a primary color: ")
+	
+problem 2: Good.
+
+problem 3: Good, though I'm confused by why you output part of the
+triangle to stderr instead of stdout.  Very odd...
+
+problem 4: Good.

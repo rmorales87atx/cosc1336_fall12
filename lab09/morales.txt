@@ -1,0 +1,11 @@
+50/50
+------------------------
+
+problem 1: Looks good.
+
+It's funny that you made a printf function.  I'm always typing that
+and finding it lacking.  I really like your mechanism for handling
+errors, too.  Much neater than all those loops.  If only we'd had time
+to talk about exceptions...
+
+problem 2: Great!

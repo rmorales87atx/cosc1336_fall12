@@ -1,0 +1,18 @@
+50/50
+------------------------
+
+problem 1a: It's a good idea to choose test cases that don't happen to
+evaluate to a whole number if your program should work with real
+numbers.  Otherwise your program might appear to work correctly when
+it is actually incorrect.  Since your program *did* work correctly on
+such a test case, I'm not taking off any points, but I wanted to
+mention it.  It's important to choose test cases that do a good job of
+exercising your code.
+
+Nice formatting!
+
+problem 2: Very clear explanations.
+
+problem 3: Excellent use of the named "constant"
+
+problem 4: Good.

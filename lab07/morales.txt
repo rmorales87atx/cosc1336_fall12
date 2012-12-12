@@ -1,0 +1,20 @@
+49/50
+------------------------
+
+problem 1: Your enhanced version is quite tidy!
+
+problem 2: Your TI-83 code is interesting.  I can see that it wasn't
+very similar to the one we wrote.  It has the advantage that caching
+all the primes is much faster than looping through all possible
+numbers to see if they're prime.  But it does limit the size of the
+number you can factorize.
+
+problem 3: When I ran this one, I got an error at the end when the
+print_stats function was called. (-1) It looks like the issue is that
+you needed to pass in num_plays instead of count.
+
+I find it less surprising that sym1 == sym2 == sym3 works, than things
+like min < value < max.  But it's clear that the Python designers
+spent a lot of time trying to make the comparators behave in an
+intuitive way when they are chained together.
+

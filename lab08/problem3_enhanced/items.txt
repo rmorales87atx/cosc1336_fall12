@@ -1,0 +1,6 @@
+4011|Banana|0.69|F
+4048|Lime|0.25|F
+4033|Lemon|0.20|F
+10025|Soda Can|0.25|TF
+10100|Pepperoni Pizza|3.99|TF
+10101|Fountain Drink|1.99|TF
