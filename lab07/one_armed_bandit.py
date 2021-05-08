@@ -104,13 +104,13 @@ def main():
         print("Play #{}: ".format(num_plays), end="")
         won = pull_lever(bet)
 
-        print("You won ${:,.2f}".format(won))
-
         total_won += won
         total_bet += bet
 
+        print("You won ${:,.2f}; Balance: ${:,.2f}".format(won, total_won - total_bet))
+
         keep_going = get_yes_or_no("Again?")
 
-    print_stats(total_bet, total_won, count)
+    print_stats(total_bet, total_won, num_plays)
 
 main()

@@ -74,16 +74,14 @@ class Board:
 
     def diagonal(self, direction):
         """
-        Returns an iterator for all symbols in the specified diagonal pattern.
+        Returns all symbols in the specified diagonal pattern.
         """
         size = self.size()
         temp = []
         if direction in ('left', '<'):
-            for rx in range(size-1, -1, -1):
-                yield self.__data[rx][rx]
+            return [self.__data[rx][rx] for rx in range(size-1, -1, -1)]
         elif direction in ('right', '>'):
-            for rx in range(size):
-                yield self.__data[rx][size-rx-1]
+            return [self.__data[rx][size-rx-1] for rx in range(size)]
         else:
             raise ValueError("invalid input: `direction` should be 'left' or 'right'")
 
@@ -100,35 +98,28 @@ class Board:
 
     def side(self, side):
         """
-        Returns an iterator for all symbols from one side of the board.
+        Returns all symbols from one side of the board.
         The 'side' parameter is a string that specifies either top, bottom,
         left, or right. The symbols '^', '_', '<', and '>' can also be used.
         """
         size = len(self.__data)
         if side in ('^', 'top'):
-            for cx in range(1,size-1):
-                yield self.__data[0][cx]
+            return [self.__data[0][cx] for cx in range(1,size-1)]
         elif side in ('_', 'bottom'):
-            for cx in range(1,size-1):
-                yield self.__data[-1][cx]
+            return [self.__data[-1][cx] for cx in range(1,size-1)]
         elif side in ('<', 'left'):
-            for rx in range(1,size-1):
-                yield self.__data[rx][0]
+            return [self.__data[rx][0] for rx in range(1,size-1)]
         elif side in ('>', 'right'):
-            for rx in range(1,size-1):
-                yield self.__data[rx][-1]
+            return [self.__data[rx][-1] for rx in range(1,size-1)]
         else:
             raise ValueError("invalid request")
 
     def side_positions(self):
         """
-        Returns an iterator for the row/column indices of
-        all side positions on the board.
+        Returns row/column indices of all side positions on the board.
         """
         sides = [(x,y) for x in [0,-1] for y in list(range(1, self.size()-1))]
-        for i in range(len(sides)):
-            for p in permutations(sides[i]):
-                yield p
+        return [perm for i in range(len(sides)) for perm in permutations(sides[i])]
 
     def __str__(self):
         """ Returns the TicTacToe board as an ASCII drawing. """
@@ -297,7 +288,7 @@ class Game:
 
 class Application:
     def __init__(self, parent):
-        self.bsize = 5
+        self.bsize = 3
         self.syms = ('X', 'O')
         self.game = Game()
 

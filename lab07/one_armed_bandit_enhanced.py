@@ -3,6 +3,13 @@
 
 from random import randrange
 
+def printf(spec, *args, end="\n"):
+    """
+    Formatted printing function. Calls the format method on the str object
+    in `spec` with the given arguments.
+    """
+    print(spec.format(*args), end=end)
+
 def get_bet():
     try:
         try:
@@ -23,15 +30,14 @@ def get_bet():
 
 def get_random_symbols(n = 1):
     items = ("Cherry", "Orange", "Plum", "Bell", "Melon", "Bar")
-    return [ items[randrange(len(items))] for x in range(num) ]
+    return [ items[randrange(len(items))] for x in range(n) ]
 
-def pull_lever(current_bet, no_print=False):
+def pull_lever(current_bet):
     sym1, sym2, sym3 = get_random_symbols(3)
 
-    if not no_print:
-        print(sym1, sym2, sym3)
+    print(sym1, sym2, sym3)
 
-    if sym1 == sym2 == sym3:         # curiously this does work
+    if sym1 == sym2 == sym3:
         return 20 * current_bet
     elif sym1 == sym2 or sym1 == sym3 or sym2 == sym3:
         return 2 * current_bet
@@ -40,14 +46,18 @@ def pull_lever(current_bet, no_print=False):
 
 def print_stats(total_bet, total_won, num_plays):
     print()
-    print("==== END OF GAME STATISTICS ====")
-    print("Number of plays: {:,}".format(num_plays))
-    print("Total bet: ${:,.2f}".format(total_bet))
-    print("Total won: ${:,.2f}".format(total_won))
-    print("Gross profit: ${:,.2f}".format(total_won - total_bet))
+
+    gross = total_won - total_bet
+
+    if gross >= 0:
+        printf("After {} play(s) you turned a profit of ${:,.2f}, betting ${:,.2f} and winning back ${:,.2f}.", \
+            num_plays, gross, total_bet, total_won)
+    else:
+        printf("After {} play(s) you lost ${:,.2f}, betting ${:,.2f} and winning back ${:,.2f}.", \
+            num_plays, -gross, total_bet, total_won)
 
     if total_bet > 0:
-        print("Payout %: {:.1f}".format(100 * (total_won / total_bet)))
+        printf("Payout %: {:.1f}", 100 * (total_won / total_bet))
 
 def get_yes_or_no(prompt):
     try:
@@ -72,10 +82,10 @@ def main():
 
         if bet is not None:
             count += 1
-            print("Play #{}: ".format(count), end="")
+            printf("Play #{}: ", count, end="")
             won = pull_lever(bet)
 
-            print("You won ${:,.2f}".format(won))
+            printf("You won ${:,.2f}", won)
 
             total_won += won
             total_bet += bet
@@ -94,7 +104,7 @@ def auto_simulate():
     for x in range(randrange(2, 42)):
         bet = randrange(1, 10000) / 100.0
         count += 1
-        total_won += pull_lever(bet, no_print=True)
+        total_won += pull_lever(bet)
         total_bet += bet
 
     print_stats(total_bet, total_won, count)

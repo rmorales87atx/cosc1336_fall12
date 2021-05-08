@@ -26,7 +26,7 @@ def draw_stick_figure(num_fails):
                   [0, 0, 0, 0, 4, 0],
                   [0, 0, 0, 7, 0, 8],
                   [0, 0, 0, 0, 0, 0]]
- 
+
     # for each character in the body, draw it if the number of
     # failed guesses is large enough
     for r in range(len(body)):
@@ -38,11 +38,11 @@ def draw_stick_figure(num_fails):
         print()
 
 def replace_all(word, guess, letter):
-    result = guess
+    result = list(guess)
     for i in range(len(word)):
         if word[i] == letter:
-            result = result[:i] + word[i] + result[i+1:]
-    return (letter in word, result)
+            result[i] = letter
+    return (letter in word, str.join('', result))
 
 def get_letter(guessed):
     letter = input("Enter a letter: ").upper()
