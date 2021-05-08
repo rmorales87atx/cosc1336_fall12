@@ -1,0 +1,8 @@
+39/20
+------------------------
+
+problem 1: Good
+
+problem 2: The spellcheck_sentence function is supposed to remove the
+punctuation from the sentence before splitting it into words. (-1)
+"meowed" will still show up as a misspelled work, though...

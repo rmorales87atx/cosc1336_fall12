@@ -1,0 +1,12 @@
+40/50
+------------------------
+
+problems 1 and 2: Good.
+
+problem 3a: Good
+
+problem 3b: I couldn't find this one anywhere.  I found a super-fancy
+table writer, but no graphical plotting stuff.  Since I don't think it
+will make any difference to your final grade at this point (since I'm
+grading it after the semester has ended), I'm not going to give you a
+chance to resubmit. (-10)

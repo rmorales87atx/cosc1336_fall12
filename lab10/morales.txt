@@ -1,0 +1,17 @@
+50/50
+------------------------
+
+problems 1 and 2: Good.
+
+problem 3: Looks great!  Your enhanced version is very nice, though I
+did catch it failing to win when it could with the following board:
+
+   |   | x
+-----------
+   | o | x
+-----------
+   | x | o
+
+I expected it to go at 0,0 and win, but it went at 1,0.
+
+I'd love to see the 3D version...
